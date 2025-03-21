@@ -6,7 +6,7 @@ import { CarouselItem } from "../../components/CarouselItem";
 
 import DesktopHeroPng from "../../assets/pngegg 1.png";
 import MobileHeroPng from "../../assets/pngegg 2.png";
-import Dish from "../../assets/dish.png";
+import Dish from "../../assets/Dish.png";
 import { Footer } from "../../components/Footer";
 import { MenuComponent } from "../../components/MenuComponent";
 import { useEffect, useState } from "react";
@@ -87,28 +87,6 @@ export function Home() {
             </span>
           </div>
         </Hero>
-
-        {/* {categories.map((category) => (
-          <CarouselWrapper key={category.name}>
-            <strong>{category.label}</strong>
-            <Carousel>
-              {dishes
-                .filter((dish) => dish.category === category.name)
-                .map((dish) => (
-                  <CarouselItem
-                    key={dish.id}
-                    editUrl={`/editdish/${dish.id}`}
-                    url={`/dish/${dish.id}`}
-                    img={dish.image}
-                    name={dish.name}
-                    price={dish.price}
-                    amount={dish.amount}
-                  />
-                ))}
-            </Carousel>
-          </CarouselWrapper>
-        ))} */}
-
 
         {categories.map((category) => (
           <CarouselWrapper key={category.name}>
