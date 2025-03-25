@@ -16,7 +16,7 @@ import { Tag } from "../../components/Tag";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { GoBack } from "../../components/GoBack";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { useAuth } from "../../hook/auth";
 
@@ -43,6 +43,8 @@ export function EditDish() {
 
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
+
+  const navigate = useNavigate();
 
   function handleMenuClick() {
     setMenuVisible(!menuVisible);
@@ -115,6 +117,7 @@ export function EditDish() {
     api
       .put(`/dishes/${id}`, formData)
       .then(() => {
+        navigate("/");
         alert("Prato atualizado com sucesso!");
       })
       .catch((error) => {

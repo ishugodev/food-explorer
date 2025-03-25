@@ -117,8 +117,8 @@ export function NewDish() {
     
     api.post("/dishes", formData)
       .then(() => {
-        alert("Prato criado com sucesso!");
         navigate("/");
+        alert("Prato criado com sucesso!");
       })
       .catch((error) => {
         console.error("Erro ao criar prato:", error);

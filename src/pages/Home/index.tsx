@@ -52,7 +52,9 @@ export function Home() {
   useEffect(() => {
     async function fetchDishes() {
       try {
-        const response = await api.get(`/dishes?name=${filters.name}&ingredients=${filters.ingredients}`);
+        const response = await api.get(`/dishes?name=${filters.name}&ingredients=${filters.ingredients}`, {
+          withCredentials: true
+        });
         const formattedDishes = response.data.map((dish: Dish) => ({
           ...dish,
           image: dish.image ? `${api.defaults.baseURL}/files/${dish.image}` : Dish,
